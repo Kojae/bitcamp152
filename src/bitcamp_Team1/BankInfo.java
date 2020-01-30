@@ -5,38 +5,36 @@ import java.util.Scanner;
 
 public class BankInfo {
 
-	BankInfoVo bankInfo = new BankInfoVo();     	// Àü¿ªº¯¼ö
-	public Object method() {						//Á¤ÀÇÇØ ³õÀº ¸ğµç method½ÇÇà, Àç±Í·Î return	
+	BankInfoVo bankInfo = new BankInfoVo();     	// ì „ì—­ë³€ìˆ˜
+	public Object method() {						//ì •ì˜í•´ ë†“ì€ ëª¨ë“  methodì‹¤í–‰, ì¬ê·€ë¡œ return	
 		Scanner scanner = new Scanner(System.in);
 		bankInfo = inputUserInfo(bankInfo);
 		ArrayList<BankInfoVo> arr = new ArrayList<BankInfoVo>();
 		
 		if(checkYn()) {
-		System.out.println("µé¾î¿È");
 		arr.add(bankInfo);
 		}
-		System.out.println("array get0 \n"+arr.get(0));
+		
 		for (int i = 0; i < arr.size(); i++) {
 			output(arr.get(i));
-			System.out.println("¾î·¹ÀÌ »çÀÌÁî"+arr.size());
 		}
 		
-		System.out.println("\n\n ´õ ÀÔ·ÂÇÏ½Ã°Ú½À´Ï±î ? ");
+		System.out.println("\n\n ë” ì…ë ¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ ? ");
 		String ys = scanner.nextLine().toUpperCase();
 		
 		return ys.equals("Y") ? method() : null;
 	}
 	
-//	System.out.println("\n------ÀºÇà Á¤º¸ ½Ã½ºÅÛ : ÀüÃ¼ °í°´ Ãâ·Â -------\n\n°èÁÂ¹øÈ£ \t ÀÌ¸§ \t ¿ùÀÔ±İ¾× \t ±â°£(³â) \t ÀÌÀ² \t ¿ø±İ"+
-//	"\t ÀÌÀÚ¾× \t ¸¸±â½Ã È¯±Ş¾×");
+//	System.out.println("\n------ì€í–‰ ì •ë³´ ì‹œìŠ¤í…œ : ì „ì²´ ê³ ê° ì¶œë ¥ -------\n\nê³„ì¢Œë²ˆí˜¸ \t ì´ë¦„ \t ì›”ì…ê¸ˆì•¡ \t ê¸°ê°„(ë…„) \t ì´ìœ¨ \t ì›ê¸ˆ"+
+//	"\t ì´ìì•¡ \t ë§Œê¸°ì‹œ í™˜ê¸‰ì•¡");
 	public void output(BankInfoVo bankInfoVo) {
-		System.out.println("\n\n°èÁÂ¹øÈ£ \t ÀÌ¸§ \t ¿ùÀÔ±İ¾× \t ±â°£(³â) \t ÀÌÀ² \t ¿ø±İ"+
-					"\t ÀÌÀÚ¾× \t ¸¸±â½Ã È¯±Ş¾×");
+		System.out.println("\n\nê³„ì¢Œë²ˆí˜¸ \t ì´ë¦„ \t ì›”ì…ê¸ˆì•¡ \t ê¸°ê°„(ë…„) \t ì´ìœ¨ \t ì›ê¸ˆ"+
+					"\t ì´ìì•¡ \t ë§Œê¸°ì‹œ í™˜ê¸‰ì•¡");
 		System.out.println(bankInfoVo.toString());
 	}
 	
 	public boolean checkYn() {
-		System.out.println("°¡ÀÔÇÏ½Ã°Ú½À´Ï±î ? ");
+		System.out.println("ê°€ì…í•˜ì‹œê² ìŠµë‹ˆê¹Œ ? ");
 		Scanner scanner = new Scanner(System.in);
 		String ys=scanner.nextLine();
 		
@@ -46,11 +44,11 @@ public class BankInfo {
 	
 	public BankInfoVo inputUserInfo(BankInfoVo bankInfo) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+		System.out.println("ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		bankInfo.setName(scanner.nextLine());
-		System.out.println("¸î³âµ¿¾È Àû±İÇÏ½Ç°Ç°¡¿ä ? ");
+		System.out.println("ëª‡ë…„ë™ì•ˆ ì ê¸ˆí•˜ì‹¤ê±´ê°€ìš” ? ");
 		bankInfo.setContractTerm(scanner.nextInt());
-		System.out.println("¿ù ÀÔ±İ¾×Àº ¾ó¸¶ ? ");
+		System.out.println("ì›” ì…ê¸ˆì•¡ì€ ì–¼ë§ˆ ? ");
 		bankInfo.setAccountCount(bankInfo.getAccountCount()+1);
 		bankInfo.setDepositMoney(scanner.nextInt());
 		bankInfo.setTotalMoney(bankInfo.getDepositMoney()*bankInfo.getContractTerm()*12);
@@ -59,5 +57,5 @@ public class BankInfo {
 	
 		return bankInfo;
 	}
-	// ¼öÁ¤Áß
+	// ìˆ˜ì •ì¤‘
 }
