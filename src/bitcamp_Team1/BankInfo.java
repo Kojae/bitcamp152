@@ -24,5 +24,5 @@ public class BankInfo{
 		
 		}
 	}
-	//수정중
+	//수정중 
 }

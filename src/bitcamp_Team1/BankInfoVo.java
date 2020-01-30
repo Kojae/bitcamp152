@@ -8,7 +8,7 @@ public class BankInfoVo {
 	private int contractTerm = 0;				//적금계약 기간
 	private int depositMoney = 0;				//월 입금액 
 	
-	//수정중
+	//수정중 
 	
 	public static double getInterestRate() {
 		return interestRate;
