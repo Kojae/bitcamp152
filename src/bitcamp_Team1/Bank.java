@@ -4,15 +4,11 @@ import java.util.ArrayList;
 
 public class Bank{
 	public static void main(String[] args) {
+	BankInfo bankInfo = new BankInfo();
 	
-		BankInfo bankInfo = new BankInfo();
-		ArrayList<BankInfo> a = new ArrayList<BankInfo>();
-		a.add(bankInfo);
-		
-		for(int i = 0 ; i<a.size(); i++) {
-		System.out.println(i);
-		}
+	bankInfo.method();
 		//수정중  
+	System.out.println("감사합니다.");
 	}
 	
 	
