@@ -12,6 +12,7 @@ public class Bank{
 		for(int i = 0 ; i<a.size(); i++) {
 		System.out.println(i);
 		}
+		//¼öÁ¤Áß
 	}
 	
 	
