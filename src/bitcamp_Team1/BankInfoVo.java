@@ -4,7 +4,7 @@ public class BankInfoVo {
 
 	static double interestRate = 0.02;			//이자율
 	private int bankCode = 100 ;  				//지점 코드		
-	private int accountCount = 000;				//계좌번호 증가값
+	private String accountCount = "000";				//계좌번호 증가값
 	private String name = "";					//이름
 	private int contractTerm = 0;				//적금계약 기간
 	private int depositMoney = 0;				//월 입금액 
@@ -13,6 +13,21 @@ public class BankInfoVo {
 	private int refundAmount = 0;				//만기시 환급액
 
 
+	public BankInfoVo() {
+		
+	}
+	
+	public BankInfoVo(String name, int contractTerm, int depositMoney,String count) {
+		this.name = name;
+		this.contractTerm=contractTerm;
+		this.depositMoney = depositMoney;		
+		totalMoney = depositMoney*contractTerm*12;
+		interestRateMoney = (int)(totalMoney * BankInfoVo.interestRate);
+		refundAmount = totalMoney+interestRateMoney;
+		this.accountCount = "00"+count;
+
+	}
+	
 	public static double getInterestRate() {
 		return interestRate;
 	}
@@ -44,11 +59,11 @@ public class BankInfoVo {
 	public void setBankCode(int bankCode) {
 		this.bankCode = bankCode;
 	}
-	public int getAccountCount() {
+	public String getAccountCount() {
 		return accountCount;
 	}
 	/**  지점별 계좌 코드 증가값 */
-	public void setAccountCount(int accountCount) {
+	public void setAccountCount(String accountCount) {
 		this.accountCount =accountCount;
 	}
 	public String getName() {
@@ -74,9 +89,9 @@ public class BankInfoVo {
 	}
 	@Override
 	public String toString() {
-		return bankCode+"-"+accountCount+" \t "+name+" \t "+depositMoney
-		+" \t "+contractTerm+" \t "+(int)(BankInfoVo.getInterestRate()*100)+"%"+
-		" \t "+totalMoney+"  "+interestRateMoney+"  "+refundAmount;
+		return bankCode+"-"+accountCount+"   "+name+" \t "+depositMoney
+		+" \t  "+contractTerm+"\t "+(int)(BankInfoVo.getInterestRate()*100)+"%"+
+		"    "+totalMoney+"  "+interestRateMoney+" \t  "+refundAmount;
 	}
 	
 }
