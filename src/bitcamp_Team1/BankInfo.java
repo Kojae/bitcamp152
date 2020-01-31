@@ -1,6 +1,7 @@
 package bitcamp_Team1;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,12 +9,11 @@ public class BankInfo {
 
 	List<BankInfoVo> arr = new ArrayList<BankInfoVo>();
 	int count=0;
+	
 	public void method() {						
 		Scanner scanner = new Scanner(System.in);
-		if(checkYn()) {
-		BankInfoVo bankInfo = inputUserInfo();
-		arr.add(bankInfo);
-		}
+		arr.add(inputUserInfo());
+		arr.removeAll(Collections.singleton(null));
 		output(arr.get(arr.size()-1));
 		System.out.println("\n\n 더 입력하시겠습니까 ? ");
 		String ys = scanner.nextLine().toUpperCase();
@@ -27,6 +27,33 @@ public class BankInfo {
 			}
 		}
 	}
+	
+	public BankInfoVo inputUserInfo() {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("이름을 입력해주세요");
+		String name = scanner.nextLine();
+		System.out.println("몇년동안 적금하실건가요? ? ");
+		int term = scanner.nextInt();
+		System.out.println("월 입금액은 얼마로 하시겠습니까? ? ");
+		int depositMoeny =scanner.nextInt();
+		int total=depositMoeny*term*12;
+		int interestRateMoney = (int)(total*BankInfoVo.interestRate);
+		int refundAmount = total+interestRateMoney;
+		
+		System.out.println(name+"님의 예상 금액은       원금 : "+total+"원, 만기시 금액  : 이율 "+
+		(int)(BankInfoVo.getInterestRate()*100) +"% --> "+total+
+				" + "+interestRateMoney+" = "+refundAmount+" 원 입니다 \n ");
+		
+		if(checkYn()) {
+		BankInfoVo bankInfo = new BankInfoVo(name,term,depositMoeny,total,interestRateMoney,
+				refundAmount,Integer.toString(arr.size()));
+		return bankInfo;
+		}else{
+		 return null;
+		}
+	}
+	
 	
 	public void output(BankInfoVo bankInfoVo) {
 		System.out.println("\n계좌번호 \t 이름 \t 월입금액 \t 기간(년)\t이율 \t 원금 "+
@@ -43,34 +70,6 @@ public class BankInfo {
 		
 	}
 	
-	public BankInfoVo inputUserInfo() {
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("이름을 입력해주세요");
-		String name = scanner.nextLine();
-		System.out.println("몇년동안 적금하실건가요? ? ");
-		int term = scanner.nextInt();
-		System.out.println("월 입금액은 얼마로 하시겠습니까? ? ");
-		int depositMoeny =scanner.nextInt();
-		
-		BankInfoVo bankInfo = new BankInfoVo(name,term,depositMoeny,Integer.toString(arr.size()));
-	
-		return bankInfo;
-	}
-//	public BankInfoVo inputUserInfo() {
-//		BankInfoVo bankInfo = new BankInfoVo(); 
-//		Scanner scanner = new Scanner(System.in);
-//		System.out.println("이름을 입력해주세요");
-//		bankInfo.setName(scanner.nextLine());
-//		System.out.println("몇년동안 적금하실건가요? ? ");
-//		bankInfo.setContractTerm(scanner.nextInt());
-//		System.out.println("월 입금액은 얼마로 하시겠습니까? ? ");
-//		bankInfo.setAccountCount(bankInfo.getAccountCount()+1);
-//		bankInfo.setDepositMoney(scanner.nextInt());
-//		bankInfo.setTotalMoney(bankInfo.getDepositMoney()*bankInfo.getContractTerm()*12);
-//		bankInfo.setInterestRateMoney((int)(bankInfo.getTotalMoney()*BankInfoVo.interestRate ));
-//		bankInfo.setRefundAmount(bankInfo.getTotalMoney()+bankInfo.getInterestRateMoney());
-//	
-//		return bankInfo;
-//	}
+
+
 }

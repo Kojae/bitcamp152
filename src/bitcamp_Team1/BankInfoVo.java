@@ -17,15 +17,16 @@ public class BankInfoVo {
 		
 	}
 	
-	public BankInfoVo(String name, int contractTerm, int depositMoney,String count) {
+	public BankInfoVo(String name, int contractTerm, int depositMoney, int totalMoney, int interestRateMoney,
+			int refundAmount, String count) {
+		super();
 		this.name = name;
-		this.contractTerm=contractTerm;
-		this.depositMoney = depositMoney;		
-		totalMoney = depositMoney*contractTerm*12;
-		interestRateMoney = (int)(totalMoney * BankInfoVo.interestRate);
-		refundAmount = totalMoney+interestRateMoney;
+		this.contractTerm = contractTerm;
+		this.depositMoney = depositMoney;
+		this.totalMoney = totalMoney;
+		this.interestRateMoney = interestRateMoney;
+		this.refundAmount = refundAmount;
 		this.accountCount = "00"+count;
-
 	}
 	
 	public static double getInterestRate() {
