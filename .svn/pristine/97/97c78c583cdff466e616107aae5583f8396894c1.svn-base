@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MiNiWeb</title>
+<link rel="stylesheet" href="D:\web\miniWeb\WebContent\WEB-INF\lib\css\color.css">
+<link rel="stylesheet" href="D:\web\miniWeb\WebContent\WEB-INF\lib\css\responsive.css">
+<link rel="stylesheet" href="D:\web\miniWeb\WebContent\WEB-INF\lib\css\main.min.css">
+<link rel="stylesheet" href="D:\web\miniWeb\WebContent\WEB-INF\lib\css\style.css">
+
+<script src="D:\web\miniWeb\WebContent\WEB-INF\lib\js\default.js"></script> 
+</head>
+<body>
+
+<div class="theme-layout">
+<div class="topbar stick">
+		<div class="logo">
+			<a title="" href="newsfeed.html"><img src="images/logo.png" alt=""></a>
+		</div>
+		
+		<div class="top-area">
+			<ul class="main-menu">
+				<li>
+				
+					<a href="#" title="">Home</a>
+					
+				</li>
+				<li>
+					<a href="#" title="">timeline</a>
+					
+				</li>
+				<li>
+					<a href="#" title="">account settings</a>
+				
+				</li>
+				<li>
+					<a href="#" title="">more pages</a>
+					
+				</li>
+			</ul>
+			
+			<div class="user-img">
+				<img src="images/resources/admin.jpg" alt="">
+				<span class="status f-online"></span>
+				<div class="user-setting">
+					<a href="#" title=""><span class="status f-online"></span>online</a>
+					<a href="#" title=""><span class="status f-away"></span>away</a>
+					<a href="#" title=""><span class="status f-off"></span>offline</a>
+					<a href="#" title=""><i class="ti-user"></i> view profile</a>
+					<a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a>
+					<a href="#" title=""><i class="ti-target"></i>activity log</a>
+					<a href="#" title=""><i class="ti-settings"></i>account setting</a>
+					<a href="#" title=""><i class="ti-power-off"></i>log out</a>
+				</div>
+			</div>
+			<span class="ti-menu main-menu" data-ripple=""></span>
+		</div>
+	</div><!-- topbar -->
+
+
+<div class="theme-layout">
+	<section>
+		<div class="gap gray-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row merged20" id="page-contents">
+							<div class="col-lg-12">
+								<div class="inbox-sec">
+									<div class="row">
+										<div class="col-lg-3 col-md-3 col-sm-4">
+											<div class="inbox-navigation">
+												<div class="inbox-panel-head">
+													<img alt="" src="images/resources/friend-avatar11.jpg">
+													<h1 style="text-align: center; margin-top: 10px;">고재현 님</h1>
+													<a title="" class="profile-mini" href="edit-profile-basic.html"><i class="fa fa-user"></i>내정보</a>
+													<a title="" class="profile-mini" href="edit-account-setting.html"><i class="fa fa-cog"></i>프로필</a>
+													<ul>
+														<li><a class="compose-btn" title="" href="#">1조 과제 - 게시판</a></li>
+													</ul>
+												</div><!-- Inbox Panel Head -->
+												<ul>
+													<li class="active"><a title="">1회차팀 - 1조과제</a><span>N</span></li>
+													<li><a title="">1회차팀 - 2조과제</a></li>
+													<li><a title="">1회차팀 - 3조과제</a><span>N</span></li>
+													<li><a title="">1회차팀 - 4조과제</a></li>
+													<li><a title="">1회차팀 - 5조과제</a></li>
+												</ul>
+												
+											</div>
+										</div>
+										<div class="col-lg-9 col-md-9 col-sm-8">
+											<div class="inbox-lists">
+
+												<div class="mesages-lists">
+											
+													<form method="post">
+														 <textarea id="titleText" rows="1" cols="20" placeholder="제목을 입력해주세요"></textarea>
+														<textarea id="mainText" rows="4" cols="50" placeholder="내용을 입력해주세요"></textarea> 
+								<!--<button id="createBoard" disabled="disabled" onclick="btnClick();">글쓰기 </button>
+								<input type="button" id="btn" value="글쓰기" disabled="disabled" onclick="btnClick();">-->
+												<input type="button" value="글쓰기" onclick="btnClick()">
+
+													
+												<input id="deleteBtn"  type="button" value="삭제" style="float: right;">
+													</form>
+												
+													<ul id="append-ul" class="message-list">
+													
+																									
+													
+													<!--   이것만 추가하면 된다 ! -->
+														
+													
+														<li class="unread">
+															<input class="select-message" type="checkbox" />
+
+															<h3 class="sender-name">2020.02.10 과제 - 고재현</h3>
+															<a title="" data-toggle="tooltip" data-original-title="Attachment"></a>
+
+															<p>서론 :  JAVA와 C,C++ 의 입지는 점점 줄어들게 될 것이고 </p>
+														</li>
+														<li class="unread">
+															<input class="select-message" type="checkbox" />
+															
+															<h3 class="sender-name">2020.02.10 과제 - 강정민</h3>
+
+															<p>Listener ==> 100% interface means 메소드 블럭을 갖지 못해 그래서 생성자를 만들 수 없다</p>
+														</li>
+														<li class="unread">
+															<input class="select-message" type="checkbox" />
+
+															<h3 class="sender-name">2020.02.10 과제 - 국여주</h3>
+
+															<p>협업 소프트웨어, 혹은 그룹웨어(groupware)는 여러 사용자가 각기 별개의 작업 환경에서 통합된 하나의</p>
+														</li>
+														<li class="unread">
+															<input class="select-message" type="checkbox" />
+
+															<h3 class="sender-name">2020.02.10 과제 - 김강산</h3>
+															<a title="" data-toggle="tooltip" data-original-title="Attachment"></a>
+
+															<p>== 수업내용 정리 ==</p>
+														</li>
+														<li class="unread">
+															<input class="select-message" type="checkbox" />
+
+															<h3 class="sender-name">2020.02.10 과제 - 박지혜</h3>
+
+															<p>Collection(List-ArrayList) - 배열은 방의 갯수가 정해져 있어 추가할 수 없음</p>
+														</li>
+														<li class="unread">
+															<input class="select-message" type="checkbox" />
+															<h3 class="sender-name">2020.02.10 과제 - 정올레그</h3>
+															<a title="" data-toggle="tooltip" data-original-title="Attachment"></a>
+
+															<p>ch5/1  Screenshot_1.jpg</p>
+														</li>
+														<li class="unread">
+															<input class="select-message" type="checkbox" />
+
+															<h3 class="sender-name">2020.02.07 과제 - 박지혜</h3>
+															<a title="" data-toggle="tooltip" data-original-title="Attachment"></a>
+
+															<p>컴포넌트.add~~~Listener(~~~ 이벤트가 발생됐을 때 처리할 문장을 가지고 있는 클래스의 인스턴스=>A)</p>
+														</li>
+													
+													<li class="unread">
+															<input class="select-message" type="checkbox" />
+
+															<h3 class="sender-name">2020.02.07 과제 - 고재현</h3>
+															<a title="" data-toggle="tooltip" data-original-title="Attachment"></a>
+
+															<p>for(int[] a : array) {</p>
+														</li>
+													</ul>
+												</div>
+											</div><!-- Inbox lists -->
+										</div>
+									</div>
+								</div>
+							</div>
+					
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>	
+	</section>
+	</div>
+</div>
+</body>
+</html>

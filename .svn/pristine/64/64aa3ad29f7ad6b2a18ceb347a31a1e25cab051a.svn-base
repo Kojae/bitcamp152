@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+function btnClick(){
+	   var newBoard = document.createElement( 'Li' );
+	   var textnode = document.createTextNode("Water");
+	   var messageList = document.getElementById("message-list");
+	   newBoard.appendChild(textnode);
+	   messageList.appendChild(newBoard);
+	   console.log("dd");
+	   
+}
+
+function myFunction() {
+
+    var node = document.createElement("LI");        // LI 엘리먼트를 생성한다. 
+
+    var textnode = document.createTextNode("Water");    //  Text 노드를 생성한다.
+
+    node.appendChild(textnode);    // LI 엘리먼트의 자식으로 text 노드를 등록한다. 
+
+    document.getElementById("myList").appendChild(node);
+
+}
+
+
+
+
+function alert(){
+	
+	alert('하악');
+}
