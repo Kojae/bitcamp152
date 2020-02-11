@@ -16,34 +16,60 @@ function btnClick(){
 	   var titleText=document.getElementById("titleText");
 	   var mainText=document.getElementById("mainText");
 	   
-	   var lih3text=document.createTextNode(titleText.value);
+   	   
+  		newBoard.appendChild(liCheckBox);
+  		newBoard.appendChild(lih3);
+  		newBoard.appendChild(lip);
 	   
-	   var liptext=document.createTextNode(mainText.value);
+	   var isNull = "";
+	   
+	   if(! titleText.value == isNull)
+		    var lih3text=document.createTextNode(titleText.value);
+	   else
+		   titleText.className="replaceText";
+	   
+	   
+	   if(! mainText.value == isNull)
+		   var liptext=document.createTextNode(mainText.value);
+	   else
+		   mainText.className="replaceText";
+	   
+	   
+	   		
+	   if( ! mainText.value == isNull|| ! titleText.value == isNull){
+	   		
+	   		lih3.appendChild(lih3text);
+		   lip.appendChild(liptext);
+		   
+		 
+		   liCheckBox.class="select-message";
+		   liCheckBox.type="checkbox";
+		   lih3.className="sender-name";
+		   
+		   
+		   
+		   var appendUl=document.getElementById("append-ul");
+		   
+		   
+		   appendUl.insertBefore(newBoard, appendUl.childNodes[0]);
+		   
+		   titleText.value="";
+		   mainText.value="";
+		   
+		   titleText.className="titleText";
+		   mainText.className="mainText";
+		   
+	   }
+	 
+
 	   
 //	   var textnode = document.createTextNode("class='unread'");
 	   //var messageList = document.getElementById("message-list");
-	   lih3.appendChild(lih3text);
-	   lip.appendChild(liptext);
-	   
-	   newBoard.appendChild(liCheckBox);
-	   newBoard.appendChild(lih3);
-	   newBoard.appendChild(lip);
-	   
-	   liCheckBox.class="select-message";
-	   liCheckBox.type="checkbox";
-	   lih3.className="sender-name";
-	   
-	   
-	   
-	   var appendUl=document.getElementById("append-ul");
-	   
-	   
-	   appendUl.insertBefore(newBoard, appendUl.childNodes[0]);
+	 
 	  // document.getElementById("append-ul").appendChild(newBoard);
 	   console.log("이거 실행됬는데 나오냐?");
 	   
-	   titleText.value="";
-	   mainText.value="";
+	  
 	   
 	   
 	   
