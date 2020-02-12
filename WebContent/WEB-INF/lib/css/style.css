@@ -714,6 +714,12 @@ header.sticky {
     vertical-align: middle;
 }
 
+
+.top-area > ul > li > a {
+	color: #D8CACA;
+	font-size: 13px;
+}
+
 .top-area .user-img {
     cursor: pointer;
     display: inline-block;
@@ -3314,7 +3320,7 @@ nav.breadcrumb {
 }
 
 .accordion .card h5 button::before {
-    content: "筌�占썲������������";
+    content: "嶺�占썲���뀐옙占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占�";
     float: right;
     font-family: fontawesome;
 }
