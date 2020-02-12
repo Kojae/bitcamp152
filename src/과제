@@ -1,0 +1,83 @@
+시험문제 문제유형
+
+---시나리오---
+13일까지 제출
+
+문제 파악, 문제 해결까지  (해설도)
+
+
+--------------------------------------------------------------------
+202.02.12
+
+클라이언트와 서버가 소통하기 위한 것 : 소켓
+
+클라이언트와 서버
+클라이언트는 서비스를 이용하는 쪽을 말하고 서버는 서비스를 제공하는 쪽을 말한다.
+
+URL
+uniform Resource Locator
+
+https://movie.naver.com/movie/bi/mi/basic.nhn?code=186821#
+
+protocol : 통신규약
+https:   - 프로토콜, ftp, smtp
+프로토콜://도메인(ip주소):포트/서브디렉터리/ 자원 이름
+
+movie.naver.com/ : ip
+
+movie/bi/mi/ : 서브디렉토리
+
+basic.nhn : 자원이름 
+
+code=186821 : 질의문(쿼리)
+
+
+aaa.html?ddd=3     -> get방식   정보를 받아오는것/쿼리를 url에입력
+aaa.html              -> post방식 서버에서 정보를 처리할때/쿼리를 바디에 숨김
+
+https://www.google.com/search?q=ecmascript+2020&rlz=1C1CHBD_koKR885KR885&oq=ecmascript+2020&aqs
+=chrome..69i57j0l5.3539j0j7&sourceid=chrome&ie=UTF-8
+
+
+(Uniform Resource Identifier, URI 통합 자원 식별자)는 인터넷에 있는 자원을 나타내는 유일한 주소이다
+↑URL(Uniform Resource Locator, 문화어: 파일식별자, 유일자원지시기)+
+   URN(Uniform Resource Name, 통합 자원 이름)
+
+springboot -> 타임리프   timelipe ?   view단에 html로 구현가능
+
+프로세스 가 큰단위 -  스레드가 작은단위
+
+스레드 : 멀티작업이 가능하고 속도가 빠르다.
+
+abstract 클래스 = 인스턴스를 생성할 수 없으며 인터페이스도 abstract 클래스 입니다.
+abstarc클래스를 구체화 클래스 시키는 방법은 상속을 하고 재정의를 해야하지만
+전부 다 할수없고 
+interface클래스는 전부 다 오버라이딩 해야한다.
+추상클래스 90%정도는 getInstance 를 제공한다.
+
+
+한글이 깨지는 이유 3가지
+1. 파일을 읽었을 때 한글을
+
+
+기본적인 inputStream,outputStream, reader,writer 은 default charset을 사용 (JVM default charset)
+//printStream = 인코딩을 입력해주지 않으면 default charset을 사용 (JVM default charset)
+모든 OS 언어에 상관없이 한글 확장 완성형 인코딩을 하려면 유니코드UTF-8로 인코딩해주는게 확실
+근데 아무리 인코딩 해줘도 IDE에서 읽을 인코딩이 설정 안되있으면 안됨(MS949).
+우리가 실행하는 eclipse도 default encoding 이 MS949로 되있는데 모두 UTF-8로 바꿔주자.
+new BufferedReader(new InputStreamReader ( file, 인코딩 ) ==> 
+* 파일을 버퍼를 이용해서 읽는 이유는 문자를 효율적으로 입출력하여 CPU부하를 줄일 수 있기 때문이다.
+bufferMemory를 사용하기 때문이다.
+
+-----------------과제-------------------
+1.콘솔창에서 대화가 가능하게 만들기
+2.여러명 이랑 대화 (목록이 나와야함)
+3.GUI창에 띄우기
+
+--------------------------------------
+
+문자열
+ 문자열 중에 강남구  가 있는지 찾기   
+-찾기만 하는거면  conatin,  어디에있는지 indexOf
+ㅇㅇㅇ,ㅇㄹㄹ,ㅁㅁㅁ,ㄷㄷㄷ    ,를 기준으로 데이터를 자르기  -  split
+문자열의 앞뒤에 공백있는걸 없앨때 -trim ,  (왼쪽 오른쪽만 자름, 가운데는 replace("  " , "")
