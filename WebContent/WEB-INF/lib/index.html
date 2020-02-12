@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="D:\web\miniWeb\WebContent\WEB-INF\lib\css\style.css">
 
 <script src="D:\web\miniWeb\WebContent\WEB-INF\lib\js\default.js"></script> 
+
 </head>
 <body>
 
@@ -38,10 +39,18 @@
 					
 				</li>
 			</ul>
+			<ul class="right-side-menu" style="text-align:right">
+			
+							<li> <a href="#"title name="longin" onclick="signUpRemove(this.innerHTML='<b>고재현</b>님 반갑습니다!')">Log In</a>　　　
+							<a href="#" name="signup">Sign Up</a>
+				
+					</li>
+				
+				</ul>
 			
 			<div class="user-img">
 				<img src="images/resources/admin.jpg" alt="">
-				<span class="status f-online"></span>
+				
 				<div class="user-setting">
 					<a href="#" title=""><span class="status f-online"></span>online</a>
 					<a href="#" title=""><span class="status f-away"></span>away</a>
@@ -53,7 +62,7 @@
 					<a href="#" title=""><i class="ti-power-off"></i>log out</a>
 				</div>
 			</div>
-			<span class="ti-menu main-menu" data-ripple=""></span>
+			
 		</div>
 	</div><!-- topbar -->
 
@@ -102,7 +111,8 @@
 												<input type="button" value="글쓰기" onclick="btnClick()">
 
 													
-												<input id="deleteBtn" onclick="rem()" type="button" value="삭제" style="float: right;">
+												<input id="deleteBtn"  type="button" value="삭제" style="float: right;" 
+												onclick ="btnRemove()">
 													</form>
 												
 													<ul id="append-ul" class="message-list">
@@ -121,14 +131,14 @@
 															<p name="mains">서론 :  JAVA와 C,C++ 의 입지는 점점 줄어들게 될 것이고 </p>
 														</li>
 														<li class="unread" name="board" >
-															<input onclick = "aa(this)" id="1"  name ="checkBOB" class="select-message" type="checkbox" />
+															<input   name ="checkBOB" class="select-message" type="checkbox" />
 															
 															<h3 class="sender-name" name="titles">2020.02.10 과제 - 강정민</h3>
 
 															<p name="mains">Listener ==> 100% interface means 메소드 블럭을 갖지 못해 그래서 생성자를 만들 수 없다</p>
 														</li>
 														<li class="unread" name="board" >
-															<input onclick = "aa(this)" id="2"  name ="checkBOB"  class="select-message" type="checkbox" />
+															<input    name ="checkBOB"  class="select-message" type="checkbox" />
 
 															<h3 class="sender-name" name="titles">2020.02.10 과제 - 국여주</h3>
 
@@ -143,21 +153,21 @@
 															<p name="mains">== 수업내용 정리 ==</p>
 														</li>
 														<li class="unread" name="board">
-															<input class="select-message" type="checkbox" />
+															<input  name="abcd" class="select-message" type="checkbox" />
 
 															<h3 class="sender-name" name="titles">2020.02.10 과제 - 박지혜</h3>
 
 															<p name="mains">Collection(List-ArrayList) - 배열은 방의 갯수가 정해져 있어 추가할 수 없음</p>
 														</li>
 														<li class="unread" name="board">
-															<input class="select-message" type="checkbox" />
+															<input  name="abcd" class="select-message" type="checkbox" />
 															<h3 class="sender-name" name="titles">2020.02.10 과제 - 정올레그</h3>
 															<a title="" data-toggle="tooltip" data-original-title="Attachment"></a>
 
 															<p name="mains"> ch5/1  Screenshot_1.jpg</p>
 														</li>
 														<li class="unread" name="board">
-															<input class="select-message" type="checkbox" />
+															<input  name="abcd" class="select-message" type="checkbox" />
 
 															<h3 class="sender-name" name="titles">2020.02.07 과제 - 박지혜</h3>
 															<a title="" data-toggle="tooltip" data-original-title="Attachment"></a>
@@ -166,7 +176,7 @@
 														</li>
 													
 													<li class="unread" name="board">
-															<input class="select-message" type="checkbox" />
+															<input  name="abcd" class="select-message" type="checkbox" />
 
 															<h3 class="sender-name" name="titles">2020.02.07 과제 - 고재현</h3>
 															<a title="" data-toggle="tooltip" data-original-title="Attachment"></a>

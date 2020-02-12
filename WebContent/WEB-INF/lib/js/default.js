@@ -10,6 +10,30 @@ var team2 = ["2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영","20
 var team2Main = ["aaaaaaaaaa","bbbbbbbbbbb","cccccccccccc",
 		"ddddddddddddddd","eeeeeeeeeeeeeeee","fffffffffffffffff"
 		,"gggggggggggggggg","hhhhhhhhhhhhhhhhhhhhh"];
+
+var checkedBtn="";
+	
+var team4 = ["2020.02.10 과제 - 김연수","2020.02.10 과제 - 김혜진","2020.02.10 과제 - 이찬영",
+	"2020.02.10 과제 - 박주영","2020.02.10 과제 - 김혜진","2020.02.10 과제 - 임찬영"
+	,"2020.02.09 과제 - 황수빈","2020.02.08 과제 - 김연수"];
+
+	var team4Main = ["GET방식 vs POST방식 ▷URL에 변수(테이터)를 포함시켜 요청한다.","String path = /java_data/1234.txt",
+		"import java.io.BufferedReader;","public static void main(String[] args) throws IOException {",
+		"# 버전 관리 트렌드 각각의 도구는 각각의 뚜렷한 특징","package 배열; public class 원시자료형2차원","# 배열은 다수의 데이터를 그룹핑해서 효율적으로 관리할 수 있는 자료 구조이다."];
+
+	
+	
+var team5 = ["2020.02.10 과제 - 이건호","2020.02.10 과제 - 김로만","2020.02.10 과제 - 정유진",
+	"2020.02.10 과제 - 정상구","2020.02.10 과제 - 유현준","2020.02.10 과제 - 이건호"
+	,"2020.02.09 과제 - 정상구","2020.02.08 과제 - 정유진"];
+	
+	
+	var team5Main = ["개념이해가 부족하여,오늘 오후 수업중에 작성했던 코드를 카피해 다시","calculator 첨부파일 main.txt 첨부파일 pane.txt",
+		"소프트웨어형(SaaS) 클라우드 서비스를 기반으로 자료 저장, 메신저, 업무 흐름",
+		"int[][] Arr = new int[3][]; for (int i = 0; i < Arr.length; i++) {",
+		"public class Arr {public static void main(String[] args) {","Difference between Array and ArrayList are following:"
+		,"5.배열과 List의 차이 Arrary (배열)","Exception 과제 try { div = num1 / num2; "];
+
 	
 var team3 = ["2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈",
 	"2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영"
@@ -57,9 +81,9 @@ function otherBoard(target){
 	}
 }
 
-function rem(){
+function btnRemove(){
 	var chkbox = document.getElementsByName("checkBOB");
-	for(var i = 0 ; i<chkbox.length; i++){
+	for(var i = 0 ; i < chkbox.length; i++){
 		if(chkbox[i].checked){
 			document.getElementsByName("board")[i].remove();
 		}
@@ -67,9 +91,9 @@ function rem(){
 }
 
 
-
-
-
+function signUpRemove(){
+	document.getElementsByName("signup")[0].remove();
+}
 
 
 function btnClick(){
