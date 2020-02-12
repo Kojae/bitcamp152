@@ -80,12 +80,12 @@ function otherBoard(target){
 					   teamMain = team3Main;
 					   break; 
 		case "team4":  team= team4;
-		   teamMain = team4Main;
-		   break; 
+					   teamMain = team4Main;
+					   break; 
 		   
 		case "team5":  team= team5;
-		   teamMain = team5Main;
-		   break; 
+					   teamMain = team5Main;
+					   break; 
 	}
 	console.log(team);
 	

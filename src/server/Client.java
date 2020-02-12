@@ -19,48 +19,43 @@ public class Client {
 		InputStream inputStream = null;
 		BufferedReader br=null;
 		OutputStream outputStream = null;
+		String data = null;
+		String abc= null;
 		
 		try {
-			socket = new Socket("192.168.0.14",8000);
+			socket = new Socket("27.35.64.174",5000);
+			System.out.println("클라이언트 접속와 ");
 			
-			System.out.println("클라이언트 접속 ");
-			while(true) {
-				inputStream=socket.getInputStream();
-				outputStream = socket.getOutputStream();
-				System.out.println("br 이전");
+			inputStream=socket.getInputStream();
+			outputStream = socket.getOutputStream();
+			
+			BufferedReader getReader = new BufferedReader(new InputStreamReader(System.in)); 
 			br= new BufferedReader(new InputStreamReader(inputStream));
-			pw = new PrintWriter(new OutputStreamWriter(outputStream));
+			pw = new PrintWriter(outputStream,true);
 			
-			System.out.println("br 이후");
-			
-			String data = "클라이언트에서 보내는 메세지"; 
-				//	scanner.nextLine();
-//			if("exit".equals(data)) {
-//				break;
-//			}
-			System.out.println(data);
-			pw.println(data);
-			System.out.println("printlnㅇㅣ후");
-			data = br.readLine();
-			
-			System.out.println(data);
-
-   			pw.close();
-			br.close();
+			while(  (data = getReader.readLine() ) != null ) {
+				pw.println(data);
+				pw.flush();
+				
+				if( (abc = br.readLine()) != null) {
+					System.out.println("server : "+abc);
+				}
+				if(abc.equals("exit")) {
+					System.out.println("//////////채팅을 종료합니다////////");
+					break;
+				}
 			}
+			
+			pw.close();
+			br.close();
+			getReader.close();
+			socket.close();
 		}catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-            try {
-                if (socket != null && !socket.isClosed()) {
- 
-                    socket.close();
-                    System.out.println("소켓종료");
-                }
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+        
+                System.out.println("클라이언트 종료");
+           
 		}
 		scanner.close();
 	}

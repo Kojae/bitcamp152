@@ -21,62 +21,43 @@ public class MyServer {
 			PrintWriter pw = null;
 			InputStream inputStream = null;
 			OutputStream outputStream = null;
+			String buffer =null;
 			try {
 				
-				serverSocket = new ServerSocket(8000);
+				serverSocket = new ServerSocket(5000);
 				System.out.println("서버 start");
 				
 				
+				socket = serverSocket.accept();
+				System.out.println("클라이언트 연결됨 ");
+
 				
-				while(true) {
-					socket = serverSocket.accept();
-					System.out.println("클라이언트 연결됨 ");
-					inputStream = socket.getInputStream();
-					outputStream=socket.getOutputStream();
-					System.out.println("server : pw 이전");
-					br= new BufferedReader(new InputStreamReader(inputStream));
-					pw = new PrintWriter(new OutputStreamWriter(outputStream));
-					System.out.println("server : pw 이후");
-					//System.out.println("클라이언트 :  "+br.readLine());
+				inputStream = socket.getInputStream();
+				outputStream = socket.getOutputStream();
+				
+				br= new BufferedReader(new InputStreamReader(inputStream,"UTF-8"));
+				pw = new PrintWriter(new OutputStreamWriter(outputStream,"UTF-8"));
+				
+				
+				while( ( buffer = br.readLine() ) != null) {
+					System.out.println("client : "+ buffer);
+					pw.println(scanner.nextLine());
+					pw.flush();					
 					
-				//	   String buffer = null;
-		               String buffer = br.readLine(); // Blocking
-		                
-//		                if (buffer == null) {
-//		 
-//		                    // 정상종료 : remote socket close()
-//		                    // 메소드를 통해서 정상적으로 소켓을 닫은 경우
-//		                    System.out.println("[server] closed by client");
-//		                    break;
-//		 
-//		                }
-		 
-		                System.out.println("[server] recived : " + buffer);
-		                pw.println(buffer);
-					
-					
-					
-					pw.println(buffer);
-					
-					br.close();
-					pw.close();
+					if(buffer.equals("exit")) {
+						System.out.println("//////////채팅을 종료합니다////////");
+						break;
+					}
 				}
+				socket.close();
+				pw.close();
+				br.close();
 				
 			}catch (Exception e) {
 				e.printStackTrace();
 			}finally {
-				
-					try {
-						if(!(serverSocket.isClosed() && serverSocket == null) ) {
-						
-						serverSocket.close();
-						System.out.println("서버 끝");
-						}
-					}catch (IOException e) {
-						e.printStackTrace();
-					}
+				scanner.close();					
 				}
-			scanner.close();
 			}
 			
 			
