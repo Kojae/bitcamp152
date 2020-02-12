@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>MiNiWeb</title>
-<link rel="stylesheet" href="C:\webProject\git\WebContent\WEB-INF\lib\css\color.css">
-<link rel="stylesheet" href="C:\webProject\git\WebContent\WEB-INF\lib\css\responsive.css">
-<link rel="stylesheet" href="C:\webProject\git\WebContent\WEB-INF\lib\css\main.min.css">
-<link rel="stylesheet" href="C:\webProject\git\WebContent\WEB-INF\lib\css\style.css">
+<link rel="stylesheet" href="D:\web\miniWeb\WebContent\WEB-INF\lib\css\color.css">
+<link rel="stylesheet" href="D:\web\miniWeb\WebContent\WEB-INF\lib\css\responsive.css">
+<link rel="stylesheet" href="D:\web\miniWeb\WebContent\WEB-INF\lib\css\main.min.css">
+<link rel="stylesheet" href="D:\web\miniWeb\WebContent\WEB-INF\lib\css\style.css">
 
-<script src="C:\webProject\git\WebContent\WEB-INF\lib\js\default.js"></script> 
+<script src="D:\web\miniWeb\WebContent\WEB-INF\lib\js\default.js"></script> 
 </head>
 <body>
 
@@ -80,11 +80,11 @@
 													</ul>
 												</div><!-- Inbox Panel Head -->
 												<ul>
-													<li class="active"><a title="">1회차팀 - 1조과제</a><span>N</span></li>
-													<li onclick="otherBoard()"><a title="" >1회차팀 - 2조과제</a></li>
-													<li><a title="">1회차팀 - 3조과제</a><span>N</span></li>
-													<li><a title="">1회차팀 - 4조과제</a></li>
-													<li><a title="">1회차팀 - 5조과제</a></li>
+													<li class="active" onclick="otherBoard(this)" id="1"><a title="">1회차팀 - 1조과제</a><span>N</span></li>
+													<li onclick="otherBoard(this)" id="2"><a title="" >1회차팀 - 2조과제</a></li>
+													<li onclick="otherBoard(this)" id="3"><a title="" >1회차팀 - 3조과제</a><span>N</span></li>
+													<li onclick="otherBoard(this)" id="4"><a title="" >1회차팀 - 4조과제</a></li>
+													<li onclick="otherBoard(this)" id="5"><a title="">1회차팀 - 5조과제</a></li>
 												</ul>
 												
 											</div>
@@ -102,7 +102,7 @@
 												<input type="button" value="글쓰기" onclick="btnClick()">
 
 													
-												<input id="deleteBtn"  type="button" value="삭제" style="float: right;">
+												<input id="deleteBtn" onclick="rem()" type="button" value="삭제" style="float: right;">
 													</form>
 												
 													<ul id="append-ul" class="message-list">
@@ -113,7 +113,7 @@
 														
 													
 														<li class="unread" name="board" >
-															<input class="select-message" type="checkbox" />
+															<input class="select-message" name ="checkBOB" type="checkbox" />
 
 															<h3  class="sender-name" name="titles">2020.02.10 과제 - 고재현</h3>
 															<a title="" data-toggle="tooltip" data-original-title="Attachment"></a>
@@ -121,21 +121,21 @@
 															<p name="mains">서론 :  JAVA와 C,C++ 의 입지는 점점 줄어들게 될 것이고 </p>
 														</li>
 														<li class="unread" name="board" >
-															<input class="select-message" type="checkbox" />
+															<input onclick = "aa(this)" id="1"  name ="checkBOB" class="select-message" type="checkbox" />
 															
 															<h3 class="sender-name" name="titles">2020.02.10 과제 - 강정민</h3>
 
 															<p name="mains">Listener ==> 100% interface means 메소드 블럭을 갖지 못해 그래서 생성자를 만들 수 없다</p>
 														</li>
 														<li class="unread" name="board" >
-															<input class="select-message" type="checkbox" />
+															<input onclick = "aa(this)" id="2"  name ="checkBOB"  class="select-message" type="checkbox" />
 
 															<h3 class="sender-name" name="titles">2020.02.10 과제 - 국여주</h3>
 
 															<p name="mains">협업 소프트웨어, 혹은 그룹웨어(groupware)는 여러 사용자가 각기 별개의 작업 환경에서 통합된 하나의</p>
 														</li>
 														<li class="unread" name="board">
-															<input class="select-message" type="checkbox" />
+															<input class="select-message" name ="checkBOB" type="checkbox" />
 
 															<h3 class="sender-name" name="titles">2020.02.10 과제 - 김강산</h3>
 															<a title="" data-toggle="tooltip" data-original-title="Attachment"></a>

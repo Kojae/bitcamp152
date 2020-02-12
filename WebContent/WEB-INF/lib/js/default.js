@@ -1,24 +1,70 @@
 /**
  * 
  */
-var list = ["2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈",
+
+var checked="";
+var team2 = ["2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈",
 			"2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영"
 			,"2020.02.09 과제 - 황수빈","2020.02.08 과제 - 임찬영"];
 	
-	var main = ["aaaaaaaaaa","bbbbbbbbbbb","cccccccccccc",
+var team2Main = ["aaaaaaaaaa","bbbbbbbbbbb","cccccccccccc",
 		"ddddddddddddddd","eeeeeeeeeeeeeeee","fffffffffffffffff"
 		,"gggggggggggggggg","hhhhhhhhhhhhhhhhhhhhh"];
 	
+var team3 = ["2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈",
+	"2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영"
+	,"2020.02.09 과제 - 황수빈","2020.02.08 과제 - 임찬영"];
+
+var team3Main = ["aaaaaaaaaa","bbbbbbbbbbb","cccccccccccc",
+"ddddddddddddddd","eeeeeeeeeeeeeeee","fffffffffffffffff"
+,"gggggggggggggggg","hhhhhhhhhhhhhhhhhhhhh"];
+
+var team4 = ["2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈",
+	"2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영"
+	,"2020.02.09 과제 - 황수빈","2020.02.08 과제 - 임찬영"];
+
+var team4Main = ["aaaaaaaaaa","bbbbbbbbbbb","cccccccccccc",
+"ddddddddddddddd","eeeeeeeeeeeeeeee","fffffffffffffffff"
+,"gggggggggggggggg","hhhhhhhhhhhhhhhhhhhhh"];
+
+var team5 = ["2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈",
+"2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영"
+,"2020.02.09 과제 - 황수빈","2020.02.08 과제 - 임찬영"];
+
+var team5Main = ["aaaaaaaaaa","bbbbbbbbbbb","cccccccccccc",
+"ddddddddddddddd","eeeeeeeeeeeeeeee","fffffffffffffffff"
+,"gggggggggggggggg","hhhhhhhhhhhhhhhhhhhhh"];
+
+
+
 	
-function otherBoard(){
-	for(var i=0; i<list.length-1; i++){
-		document.getElementsByName("titles")[i].innerHTML=list[i];
-		document.getElementsByName("mains")[i].innerHTML=main[i];
+	function aa(target){
+	console.log(target.name);
 	}
 	
+function otherBoard(target){
+	
+	var targetId = target.id;
+	var targetMain = target.id+"Main";
+	
+	console.log(team+"1".length);
+	console.log(targetMain);
+
+	for(var i=0; i< team+targetId.length-1; i++){
+		console.log(i);
+		document.getElementsByName("titles")[i].innerHTML=team+targetId[i];
+		document.getElementsByName("mains")[i].innerHTML=team+targetMain[i];
+	}
 }
 
-
+function rem(){
+	var chkbox = document.getElementsByName("checkBOB");
+	for(var i = 0 ; i<chkbox.length; i++){
+		if(chkbox[i].checked){
+			document.getElementsByName("board")[i].remove();
+		}
+	}
+}
 
 
 
@@ -33,8 +79,6 @@ function btnClick(){
 	var lih3=document.createElement( "h3" );		//h3태그추가
 	var lip = document.createElement( "p" );		//p태그추가
 	var liCheckBox = document.createElement( "input" );  //input태그 추가
-	
-	
 	var titleText=document.getElementById("titleText");			//제목
 	var mainText=document.getElementById("mainText");			//본문
 	
