@@ -66,24 +66,17 @@ var team5 = ["2020.02.10 과제 - 이건호","2020.02.10 과제 - 김로만","20
 
 	
 	
-	
-	
-
-
-	
-	
 function getTeam(target){
 	switch(target.id){
-	case "team1":  team= team1; 
+	case "team1":	team= team1; 
 					teamMain = team1Main; 
-					
 				   break;
 	case "team2":  team= team2;
 					teamMain = team2Main;
 				   break; 
-	case "team3": this. team= team3;
-	this. teamMain = team3Main;
-				   break; 
+	case "team3":   team= team3;
+					teamMain = team3Main;
+				    break; 
 	case "team4":  team= team4;
 				   teamMain = team4Main;
 				   break; 
@@ -94,37 +87,45 @@ function getTeam(target){
 	}
 }
 	
+
+
 function otherBoard(target){
 	var team="";
 	var teamMain="";
 	 var ulId = document.getElementsByClassName("message-list")[0];
-	switch(target.id){
-	case "team1":   team= team1; 
-					teamMain = team1Main; 
-					ulId.setAttribute("id","append-ul-1");
-				    break;
-	case "team2":   team= team2;
-					teamMain = team2Main;
-					ulId.setAttribute("id","append-ul-2");
-				    break; 
-	case "team3":	team= team3;
-					teamMain = team3Main;
-					ulId.setAttribute("id","append-ul-3");
-				    break; 
-	case "team4":   team= team4;
-				    teamMain = team4Main;
-				    ulId.setAttribute("id","append-ul-4");
-				    break; 
-	   
-	case "team5":   team= team5;
-				    teamMain = team5Main;
-				    ulId.setAttribute("id","append-ul-5");
-				    break; 
-	}
+	var active = document.getElementsByClassName("active");
+	active.className = "";
+//	 getTeam.call(this, target);
+	 
+
+	 switch(target.id){
+	 	case "team1":   team= team1; 
+	 					teamMain = team1Main; 
+	 					ulId.setAttribute("id","team1");
+	 				    break;
+	 	case "team2":   team= team2;
+	 					teamMain = team2Main;
+	 					ulId.setAttribute("id","team2");
+	 				    break; 
+	 	case "team3":	team= team3;
+	 					teamMain = team3Main;
+	 					ulId.setAttribute("id","team3");
+	 				    break; 
+	 	case "team4":   team= team4;
+	 				    teamMain = team4Main;
+	 				    ulId.setAttribute("id","team4");
+	 				    break; 
+	 	   
+	 	case "team5":   team= team5;
+	 				    teamMain = team5Main;
+	 				    ulId.setAttribute("id","team5");
+	 				    break; 
+	 	}
+	 
 	for(var i=0; i< team.length-1; i++){
 		document.getElementsByName("titles")[i].innerHTML=team[i];
 		document.getElementsByName("mains")[i].innerHTML=teamMain[i];
-		
+
 	}	
 }
 
@@ -132,9 +133,15 @@ function otherBoard(target){
 
 function btnRemove(){
 	var chkbox = document.getElementsByName("checkBOB");
+	var ulId = document.getElementsByClassName("message-list")[0];
+	var whoTeam=document.getElementById(ulId.id);
+	
 	for(var i = 0 ; i < chkbox.length; i++){
 		if(chkbox[i].checked){
 			document.getElementsByName("board")[i].remove();
+			getTeam.call(this, whoTeam);
+			team.splice(team.indexOf(team[i]),1);
+			teamMain.splice(teamMain.indexOf(teamMain[i]),1);
 		}
 	}
 }
@@ -145,20 +152,27 @@ function signUpRemove(){
 }
 
 
+
 function btnClick(){
 	
 	var isNull = "";
 	var newBoard = document.createElement( "LI" );  //li태그 추가
 	var lih3=document.createElement( "h3" );		//h3태그추가
 	var lip = document.createElement( "p" );		//p태그추가
+	var liSpan = document.createElement("span");
 	var liCheckBox = document.createElement( "input" );  //input태그 추가
 	var titleText=document.getElementById("titleText");			//제목
 	var mainText=document.getElementById("mainText");			//본문
-	
+	    
 	   
+		
+	
+	    
+	    
 		newBoard.appendChild(liCheckBox);					//li에 태그 넣기
 		newBoard.appendChild(lih3);
 		newBoard.appendChild(lip);
+		
 		
 		   if(! titleText.value == isNull)
 			    var lih3text=document.createTextNode(titleText.value);			// 제목을 입력안하면 빨간글씨로
@@ -192,33 +206,36 @@ function btnClick(){
 		   var ulId = document.getElementsByClassName("message-list")[0];
 		   
 			switch(ulId.id){
-			case "append-ul-1":   
+			case "team1":   
 							team= team1; 
 							teamMain = team1Main; 
-							ulId.setAttribute("id","append-ul-1");
+							ulId.setAttribute("id","team1");
 						    break;
-			case "append-ul-2":   
+			case "team1":   
 							team= team2;
 							teamMain = team2Main;
-							ulId.setAttribute("id","append-ul-2");
+							ulId.setAttribute("id","team1");
 						    break; 
-			case "append-ul-3":	team= team3;
+			case "team3":	team= team3;
 							teamMain = team3Main;
-							ulId.setAttribute("id","append-ul-3");
+							ulId.setAttribute("id","team3");
 						    break; 
-			case "append-ul-4":   
+			case "team4":   
 							team= team4;
 						    teamMain = team4Main;
-						    ulId.setAttribute("id","append-ul-4");
+						    ulId.setAttribute("id","team4");
 						    break; 
-			case "append-ul-5":   team= team5;
+			case "team5":   team= team5;
 						    teamMain = team5Main;
-						    ulId.setAttribute("id","append-ul-5");
+						    ulId.setAttribute("id","team5");
 						    break; 
 			}
 		   
 			   
-		
+
+			var newNode=document.getElementById(ulId.id);
+			newNode.appendChild(liSpan);
+			newNode.children[1].innerHTML = "N";
 			
 		   ulId.insertBefore(newBoard, ulId.childNodes[0]);	
 			   
