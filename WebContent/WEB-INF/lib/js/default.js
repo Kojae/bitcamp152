@@ -5,6 +5,16 @@
 var checked="";
 var checkedBtn="";
 
+var team1 = ["2020.02.10 과제 - 고재현","2020.02.10 과제 - 강정민","2020.02.10 과제 - 국여주",
+	"2020.02.10 과제 - 김강산","2020.02.10 과제 - 정올레그","2020.02.10 과제 - 박지혜"
+	,"2020.02.09 과제 - 강정민","2020.02.08 과제 - 김강산"];
+
+var team1Main = ["서론 :  JAVA와 C,C++ 의 입지는 점점 줄어들게 될 것이고","========수업내용 정리=========",
+	"Listener ==> 100% interface means 메소드 블럭을 갖지 못해 그래서 생성자를 만들 수 없다",
+"협업 소프트웨어, 혹은 그룹웨어(groupware)는 여러 사용자가 각기 별개의 작업 환경에서 통합된 하나의",
+"Collection(List-ArrayList) - 배열은 방의 갯수가 정해져 있어 추가할 수 없음","ch5/1  Screenshot_1.jpg"
+,"컴포넌트.add~~~Listener(~~~ 이벤트가 발생됐을 때 처리할 문장을 가지고 있는 클래스의 인스턴스=>A)","for(int[] a : array) {"];
+
 
 
 var team2 = ["2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈",
@@ -61,40 +71,64 @@ var team5 = ["2020.02.10 과제 - 이건호","2020.02.10 과제 - 김로만","20
 
 
 	
-	function aa(target){
-	console.log(target.name);
+	
+function getTeam(target){
+	switch(target.id){
+	case "team1":  team= team1; 
+					teamMain = team1Main; 
+					
+				   break;
+	case "team2":  team= team2;
+					teamMain = team2Main;
+				   break; 
+	case "team3": this. team= team3;
+	this. teamMain = team3Main;
+				   break; 
+	case "team4":  team= team4;
+				   teamMain = team4Main;
+				   break; 
+	   
+	case "team5":  team= team5;
+				   teamMain = team5Main;
+				   break; 
 	}
+}
 	
 function otherBoard(target){
 	var team="";
 	var teamMain="";
-	console.log(target.id);
+	 var ulId = document.getElementsByClassName("message-list")[0];
 	switch(target.id){
-		case "team1":  team= team1; 
-					   teamMain = team1Main; 
-					   break;
-		case "team2":  team= team2;
-					   teamMain = team2Main;
-					   break; 
-		case "team3":  team= team3;
-					   teamMain = team3Main;
-					   break; 
-		case "team4":  team= team4;
-					   teamMain = team4Main;
-					   break; 
-		   
-		case "team5":  team= team5;
-					   teamMain = team5Main;
-					   break; 
+	case "team1":   team= team1; 
+					teamMain = team1Main; 
+					ulId.setAttribute("id","append-ul-1");
+				    break;
+	case "team2":   team= team2;
+					teamMain = team2Main;
+					ulId.setAttribute("id","append-ul-2");
+				    break; 
+	case "team3":	team= team3;
+					teamMain = team3Main;
+					ulId.setAttribute("id","append-ul-3");
+				    break; 
+	case "team4":   team= team4;
+				    teamMain = team4Main;
+				    ulId.setAttribute("id","append-ul-4");
+				    break; 
+	   
+	case "team5":   team= team5;
+				    teamMain = team5Main;
+				    ulId.setAttribute("id","append-ul-5");
+				    break; 
 	}
-	console.log(team);
-	
 	for(var i=0; i< team.length-1; i++){
 		document.getElementsByName("titles")[i].innerHTML=team[i];
 		document.getElementsByName("mains")[i].innerHTML=teamMain[i];
-	}
-	
+		
+	}	
 }
+
+
 
 function btnRemove(){
 	var chkbox = document.getElementsByName("checkBOB");
@@ -147,20 +181,47 @@ function btnClick(){
 		   newBoard.setAttribute("name","board");
 		   liCheckBox.className="select-message";
 		   liCheckBox.type="checkbox";
+		   liCheckBox.setAttribute("name","checkBOB");
 		   lih3.className="sender-name";
 		   lih3.setAttribute("name","titles");
 		   lip.setAttribute("name","mains");
 		   
 		   
+		// 맨앞에 갖다붙히기(ul의 첫번째 li)
+		   var append = document.getElementsByClassName("message-list");
+		   var ulId = document.getElementsByClassName("message-list")[0];
 		   
-		   var appendUl=document.getElementById("append-ul");
+			switch(ulId.id){
+			case "append-ul-1":   
+							team= team1; 
+							teamMain = team1Main; 
+							ulId.setAttribute("id","append-ul-1");
+						    break;
+			case "append-ul-2":   
+							team= team2;
+							teamMain = team2Main;
+							ulId.setAttribute("id","append-ul-2");
+						    break; 
+			case "append-ul-3":	team= team3;
+							teamMain = team3Main;
+							ulId.setAttribute("id","append-ul-3");
+						    break; 
+			case "append-ul-4":   
+							team= team4;
+						    teamMain = team4Main;
+						    ulId.setAttribute("id","append-ul-4");
+						    break; 
+			case "append-ul-5":   team= team5;
+						    teamMain = team5Main;
+						    ulId.setAttribute("id","append-ul-5");
+						    break; 
+			}
 		   
-		   
-		   appendUl.insertBefore(newBoard, appendUl.childNodes[0]);			// 맨앞에 갖다붙히기(ul의 첫번째 li)
-		   
-
-		   list.unshift(titleText.value);
-		   main.unshift(mainText.value);
+			   
+		   ulId.insertBefore(newBoard, ulId.childNodes[0]);	
+			   
+		   team.unshift(titleText.value);
+		   teamMain.unshift(mainText.value);
 		   
 		   titleText.value="";
 		   mainText.value="";
@@ -173,7 +234,6 @@ function btnClick(){
 	   
 //	   document.getElementsByName("board")[0].remove();
 
-	   console.log("이거 실행됬는데 나오냐?");									//디버깅용 
 	   
 }
 
