@@ -142,6 +142,7 @@ function btnRemove(){
 			getTeam.call(this, whoTeam);
 			team.splice(team.indexOf(team[i]),1);
 			teamMain.splice(teamMain.indexOf(teamMain[i]),1);
+			console.log(document.getElementsByName("board")[i]);
 		}
 	}
 }
@@ -211,10 +212,10 @@ function btnClick(){
 							teamMain = team1Main; 
 							ulId.setAttribute("id","team1");
 						    break;
-			case "team1":   
+			case "team2":   
 							team= team2;
 							teamMain = team2Main;
-							ulId.setAttribute("id","team1");
+							ulId.setAttribute("id","team2");
 						    break; 
 			case "team3":	team= team3;
 							teamMain = team3Main;
