@@ -14,7 +14,7 @@ import java.io.PrintStream;
 
 public class ReadTest5 {
 	public static void main(String[] args) throws IOException {
-		String pathName="C:/work_space/text.txt";
+		String pathName="D:/java_data1234.txt";
 		String pathName2="C:/work_space/clone.txt";
 		
 		File textFile=new File(pathName);
@@ -31,8 +31,8 @@ public class ReadTest5 {
 //		PrintStream out = new PrintStream(saveFile);
 //		BufferedWriter fw = new BufferedWriter(new FileWriter(saveFile));
 		
-//		â†‘ ì£¼ì„ì²˜ë¦¬ í•œ ê²ƒì²˜ëŸ¼ ë‹¤ì–‘í•˜ê²Œ read,write í•  ìˆ˜ ìˆì§€ë§Œ charsetì„ parameterë¡œ ë°›ì§€ ì•Šì•„ ì„œ
-//		ê¸°ë³¸ encodingì„ í•œë‹¤. ê·¸ë˜ì„œ StreamReader/writerì„ ì¨ì„œ charsetì„ ëª…ì‹œí•´ì¤˜ì•¼ í•œë‹¤.		
+//		¡è ÁÖ¼®Ã³¸® ÇÑ °ÍÃ³·³ ´Ù¾çÇÏ°Ô read,write ÇÒ ¼ö ÀÖÁö¸¸ charsetÀ» parameter·Î ¹ŞÁö ¾Ê¾Æ ¼­
+//		±âº» encodingÀ» ÇÑ´Ù. ±×·¡¼­ StreamReader/writerÀ» ½á¼­ charsetÀ» ¸í½ÃÇØÁà¾ß ÇÑ´Ù.		
 		String str= null;
 		while ( (str = reader.readLine()) != null ) {
 			System.out.println(str);

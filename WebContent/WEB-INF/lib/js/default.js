@@ -16,27 +16,27 @@ var team1Main = ["서론 :  JAVA와 C,C++ 의 입지는 점점 줄어들게 될 
 ,"컴포넌트.add~~~Listener(~~~ 이벤트가 발생됐을 때 처리할 문장을 가지고 있는 클래스의 인스턴스=>A)","for(int[] a : array) {"];
 
 
+var team2 = ["2020.02.10 과제 - 이예나","2020.02.10 과제 - 이중훈","2020.02.10 과제 - 이지윤",
+	"2020.02.10 과제 - 김민종","2020.02.10 과제 - 홍정연","2020.02.10 과제 - 이지윤"
+	,"2020.02.09 과제 - 이중훈","2020.02.08 과제 - 이예나"];
 
-var team2 = ["2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈",
-			"2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영"
-			,"2020.02.09 과제 - 황수빈","2020.02.08 과제 - 임찬영"];
-	
-var team2Main = ["aaaaaaaaaa","bbbbbbbbbbb","cccccccccccc",
-		"ddddddddddddddd","eeeeeeeeeeeeeeee","fffffffffffffffff"
-		,"gggggggggggggggg","hhhhhhhhhhhhhhhhhhhhh"];
-
-
-
+var team2Main = ["소스 형상관리(Software Configuration Management, SCM) SW개발 및 유지보수 과정에서", 
+	"버전 관리 시스템은 상용과 비상용(오픈소스)로 구분 할 수 있다.","구글 드라이브- 팀원 간 또는 고객과 문서를 공유하거나 공동 작업을 ",
+		"계산기 -기능은 구현하였으나, 연속적인 연산이 안됩니다","Array(배열) 데이터가 많아지면 그룹 관리의 필요성이 생긴다. 이럴 때",
+		"이벤트 핸들러 : 컴포넌트에 감시자를 심어 주는것","배열(Array)의 특징 -같은 자료형을 가진 변수를 하나로 나타낸 것",
+		"collection : 서로 다른 자료형을 모아놓은 집합체. 일정크기를 잡아놓고"];
 
 
-var team3 = ["2020.02.10 과제 - 김말자","2020.02.10 과제 - 박말자","2020.02.10 과제 - 홍말자",
-	"2020.02.10 과제 - 임찬영","2020.02.10 과제 - 황수빈","2020.02.10 과제 - 임찬영"
-	,"2020.02.09 과제 - 황수빈","2020.02.08 과제 - 임찬영"];
 
-var team3Main = ["aaaaaaaaaa","bbbbbbbbbbb","cccccccccccc",
-"ddddddddddddddd","eeeeeeeeeeeeeeee","fffffffffffffffff"
-,"gggggggggggggggg","hhhhhhhhhhhhhhhhhhhhh"];
+var team3 = ["2020.02.10 과제 - 동송현","2020.02.10 과제 - 김하현","2020.02.10 과제 - 남윤대",
+	"2020.02.10 과제 - 김종성","2020.02.10 과제 - 진보형","2020.02.10 과제 - 동송현"
+	,"2020.02.09 과제 - 김하현","2020.02.08 과제 - 김종성"];
 
+var team3Main = ["현재 프로젝트의 upload폴더에 저장, d드라이브 java_out폴더에 업로드",
+	"객체지향 1. class-member변수(데이터를 기억할 공간)","function f(x,y){ return x+y;",
+"문제가 주어지고 이것에 대해 프로그램을 작성해라라고 한다면 ","Application Programming Interace / 라이브러리",
+"연습문제(5~8장) 첨부파일 page122_7.java ","문자열을 입력하기 위해 bufferedreader로 변경하였으나 1바이트만 가져오는 read()",
+"컴포넌트 사용자가 사용하는 시스템에 대한 조작장치. 통상 Control"];
 
 	
 	
@@ -218,6 +218,8 @@ function btnClick(){
 			}
 		   
 			   
+		
+			
 		   ulId.insertBefore(newBoard, ulId.childNodes[0]);	
 			   
 		   team.unshift(titleText.value);
